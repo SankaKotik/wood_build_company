@@ -1,0 +1,40 @@
+{% extends 'layout.html'%}
+
+  {% block title%}
+    <title>Название компании - Мы уже YY лет на рынке, у нас уже NNNN клиентов</title>
+  {% endblock %}
+
+  {% block main%}
+<main>
+
+  <section class="py-5 container">
+    <div class="row py-lg-5">
+        <h1 class="fw-light">Услуги</h1>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <!-- -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="logo.png">
+            <div class="card-body">
+              <p class="card-text">Название</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">От ? рублей</button>
+                </div>
+                <small class="text-body-secondary">За 1 м2</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -->
+      </div>
+    </div>
+  </div>
+
+</main>
+  {% endblock %}
