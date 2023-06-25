@@ -12,14 +12,14 @@
 
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
   <div class="col-md-3 mb-2 mb-md-0">
-    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-      <img src="logo.svg" alt="Wooden Home" class="bi">
+    <a href="{% url 'home' %}" class="d-inline-flex link-body-emphasis text-decoration-none">
+      <img src="{% static 'images/logo.png'%}" alt="Wooden Home" class="bi">
     </a>
   </div>
 
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="index.html" class="nav-link px-2">Главная</a></li>
-    <li><a href="usl.html" class="nav-link px-2">Услуги</a></li>
+    <li><a href="{% url 'home' %}" class="nav-link px-2">Главная</a></li>
+    <li><a href="{% url 'services' %}" class="nav-link px-2">Услуги</a></li>
   </ul>
 
   <div class="col-md-3 text-end">

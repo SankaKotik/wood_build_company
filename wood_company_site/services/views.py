@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
+from .models import Service
+
+
 # Create your views here.
 def index(request):
-    return render(request, 'services/usl.html')
+    cards = Service.objects.all()
+    return render(request, 'services/usl.html', {'data': cards})

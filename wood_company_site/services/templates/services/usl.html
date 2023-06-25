@@ -1,7 +1,7 @@
-{% extends 'layout.html'%}
+{% extends 'main/layout.html'%}
 
   {% block title%}
-    <title>Название компании - Мы уже YY лет на рынке, у нас уже NNNN клиентов</title>
+    <title>Название компании - Услуги</title>
   {% endblock %}
 
   {% block main%}
@@ -14,17 +14,20 @@
   </section>
 
   <div class="album py-5 bg-body-tertiary">
+    {% for obj in data%}
     <div class="container">
       <!-- -->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <img src="logo.png">
+            {% if obj.image %}
+            <img src="{{ obj.image.url}}">
+            {% endif %}
             <div class="card-body">
-              <p class="card-text">Название</p>
+              <p class="card-text">{{ obj.name }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">От ? рублей</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">{{ obj.cost }}</button>
                 </div>
                 <small class="text-body-secondary">За 1 м2</small>
               </div>
@@ -34,6 +37,7 @@
         <!-- -->
       </div>
     </div>
+    {% endfor %}
   </div>
 
 </main>
