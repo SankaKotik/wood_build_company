@@ -1,0 +1,63 @@
+{% extends 'main/layout.html'%}
+
+  {% block title %}
+    <title>Название компании - Мы уже YY лет на рынке, у нас уже NNNN клиентов</title>
+  {% endblock %}
+
+  {% block main%}
+    <main>
+        <div class="header">
+          <h1>Название компании</h1>
+          <h2>Мы уже YY лет на рынке, у нас уже NNNN клиентов</h2>
+        </div>
+
+        <div class="row">
+          <div class="side">
+              <h1>Было</h1>
+              <img src="do.png">
+          </div>
+          <div class="side">
+              <h1>Стало</h1>
+              <img src="posle.png">
+          </div>
+          
+          <div class="main">
+            <h2 align="center"> Наша компания на рынке уже 1 год, и успела добиться огромных успехов </h2>
+              <div class="row">
+                <div class="card">
+                    <img src="house.svg" alt="домик сердечко из трубы">
+                    <h2> множество </h3>
+                    <p> положительных отзывов </p>
+                </div>
+                <div class="card">
+                    <img src="clock.svg" alt="часики">
+                    <h2> +1 год </h2>
+                    <p> на рынке </p>
+                </div>
+                <div class="card">
+                    <img src="plan.svg" alt="строитель держит план">
+                    <h2> +2000 </h2>
+                    <p> выполненных заказов </p>
+                </div>
+                <div class="card">
+                    <img src="tools.svg" alt="молоток рключ">
+                    <h2> лучшие </h2>
+                    <p> мастера своего дела </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="side">
+                    <div class="greenbutton"><a> Услуги </a></div>
+                </div>
+                <div class="side">
+                    <div class="greenbutton"><a> Работы </a></div>
+                    <p> <small> переход на яндекс диск </small> </p>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+    </main>
+  {% endblock %}
+
+
