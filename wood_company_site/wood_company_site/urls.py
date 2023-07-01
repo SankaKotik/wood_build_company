@@ -27,6 +27,5 @@ urlpatterns = [
     path('', views.redirect_view),
     path('admin/', admin.site.urls),
     path('main/', include('main.urls')),
-    path('services/', include('services.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
