@@ -1,0 +1,32 @@
+Ставим сервер django в интерактивном режиме (например по ssh) 
+Команды для убунты и подобных (Debian, ...) (от админа! sudo su): 
+
+apt-get update -y && apt-get upgrade -y && apt-get install -y git python3 python3-pip # Установка
+git clone <СЮДА ССЫЛКУ НА РЕПО/ВЕТКА> # Получение собственно наших файлов
+pip install django pillow # Зависимости, правильнее - через requirements.txt, но мы проще
+python3 manage.py runserver 0.0.0.0:8000 # Запуск сервера
+
+ для Arch'а и подобных (Manjaro, ...):
+pacman -Syu git python3 python3-pip
+...
+
+ для Termux'а (Android, например на старой мобиле):
+pkg update && pkg upgrade && pkg install git python3 python3-pip
+...
+
+ для Windows'а:
+python ставим из магазина либо с сайта, с git'ом геморрой, скачай зип и распакуй куда хочешь
+все остальное так же
+
+Про домашний хостинг (за NAT'ом):
+ставим ngrok - регистрируемся на сайте, получаем бинарник и ключик, либо стучимся в личку, дам свой
+рядом с бинарником кладем ngrok.yml и пишем туда:
+
+version: "2"
+authtoken: КЛЮЧИК
+
+Даем права на запуск (chmod +x ФАЙЛИК) Запускаем:
+
+./ngrok --config ngrok.yml http 8000
+
+Этот же способ работает через VPN и анонимайзеры, так что можно спрятаться за Tor'ом и хостить ЦП (!)
