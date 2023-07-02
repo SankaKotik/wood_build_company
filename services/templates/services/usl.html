@@ -1,0 +1,36 @@
+
+
+
+<section id="services" class="services">
+
+  <!--  Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+	<h2>Услуги</h2>
+  </div><!-- End Section Title -->
+
+	<div class="container py-2">
+		{% for obj in data %}
+	<article class="postcard light {% cycle 'blue' 'red' 'green' 'yellow' %}">
+		<a class="postcard__img_link" href="#">
+			{% if obj.image %}
+			<img class="postcard__img" src="{{ obj.image.url}}" alt="Image Title" />
+			{% endif %}
+		</a>
+		<div class="postcard__text t-dark">
+			<h1 class="postcard__title blue"><a href="#">{{ obj.name }}</a></h1>
+
+			<div class="postcard__bar"></div>
+			<div class="postcard__preview-txt">{{ obj.description }}</div>
+			<ul class="postcard__tagbox">
+				<li class="tag__item"><i class="fas fa-tag mr-2"></i> от {{ obj.cost }} р. за кв.м</li>
+				<li class="tag__item"><i class="fas fa-clock mr-2"></i> {{ obj.time }} дней</li>
+
+			</ul>
+		</div>
+	</article>
+
+		{% endfor %}
+
+
+</div>
+</section><!-- End Services Section -->
