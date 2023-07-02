@@ -10,7 +10,7 @@
 
 	<div class="container py-2">
 		{% for obj in data %}
-	<article class="postcard light {% cycle 'blue' 'red' 'green' 'yellow' %}">
+	<article class="postcard dark {% cycle 'blue' 'red' 'green' 'yellow' %}">
 		<a class="postcard__img_link" href="#">
 			{% if obj.image %}
 			<img class="postcard__img" src="{{ obj.image.url}}" alt="Image Title" />
@@ -33,4 +33,7 @@
 
 
 </div>
+	<div class="container section-title" data-aos="fade-up">
+        <a class="btn-more" href="">Показать больше</a>
+	</div>
 </section><!-- End Services Section -->

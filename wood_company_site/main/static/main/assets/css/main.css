@@ -3026,6 +3026,7 @@ a, a:hover {
   justify-content: center;
 }
 .postcard .postcard__tagbox .tag__item {
+  color: #efe4d4;
   display: inline-block;
   background: rgba(83, 83, 83, 0.4);
   border-radius: 3px;
