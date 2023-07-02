@@ -19,24 +19,25 @@
 
 /* Global Colors */
 :root {
-  --color-default: #212529;
+  --color-default: #efe4d4;
   --color-default-rgb: 33, 37, 41;
-  --color-background: #ffffff;
-  --color-background-rgb: 255, 255, 255;
-  --color-primary: #e84545;
-  --color-primary-rgb: 232, 69, 69;
-  --color-secondary: #32353a;
-  --color-secondary-rgb: 50, 53, 58;
+  --color-background: #151618;
+  --color-background-rgb: 21, 22, 24;
+  --color-primary: #b07946;
+  --color-primary-rgb: 176, 121, 70;
+  --color-secondary: #a9a454;
+  --color-secondary-rgb: 169, 164, 84;
   --color-box-background: #ffffff;
   --color-box-background-rgb: 255, 255, 255;
   --color-inverse: #ffffff;
   --color-inverse-rgb: 255, 255, 255;
+  --color-third: #556b2f
 }
 
 /* Nav Menu Colors */
 :root {
-  --color-nav: #3a3939;
-  --color-nav-hover: #e84545;
+  --color-nav: #efe4d4;
+  --color-nav-hover: #b07946;
   --color-nav-dropdown: #3a3939;
   --color-nav-dropdown-hover: #e84545;
   --color-nav-dropdown-background: #ffffff;
@@ -236,7 +237,7 @@ section {
   --color-background: #ffffff;
   --color-secondary: #444444;
   --color-nav: #444444;
-  --color-nav-hover: #e84545;
+  --color-nav-hover: #b07946;
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -264,10 +265,10 @@ section {
 /* Home Page Custom Header on page scroll
 ------------------------------*/
 .index-page.scrolled .header {
-  --color-background: #ffffff;
+  --color-background: #151618;
   --color-secondary: #444444;
-  --color-nav: #444444;
-  --color-nav-hover: #d83535;
+  --color-nav: #efe4d4;
+  --color-nav-hover: #b07946;
 }
 
 /*--------------------------------------------------------------
@@ -277,6 +278,7 @@ section {
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
+    
   }
 
   .navmenu ul {
@@ -926,7 +928,7 @@ section {
 /* About Section - Home Page
 ------------------------------*/
 .about {
-  --color-background: #f4f4f4;
+  --color-background: #efe4d4;
 }
 
 .about .content h3 {
@@ -943,6 +945,10 @@ section {
 .about .content h2 {
   color: var(--color-secondary);
   font-weight: 700;
+}
+.about .content p {
+  color: var(--color-third);
+  
 }
 
 .about .content p:last-child {
@@ -1012,6 +1018,7 @@ section {
 
 .about .icon-box p {
   margin-bottom: 0;
+  color: var(--color-third);
 }
 
 .about .icon-box:hover i {
@@ -1944,7 +1951,7 @@ section {
 /* Contact Section - Home Page
 ------------------------------*/
 .contact {
-  --color-box-background: #f7f7f7;
+  --color-box-background: #efe4d4;
 }
 
 .contact .info-item {
@@ -1970,6 +1977,7 @@ section {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+  color: var(--color-third);
 }
 
 .contact .php-email-form {
@@ -2956,13 +2964,13 @@ a, a:hover {
   color: #ffffff;
 }
 .postcard.dark {
-  background-color: #18151f;
+  background-color: #a9a454;
 }
 .postcard.light {
   background-color: #e1e5ea;
 }
 .postcard .t-dark {
-  color: #18151f;
+  color: #a9a454;
 }
 .postcard a {
   color: inherit;
@@ -2977,6 +2985,7 @@ a, a:hover {
 }
 .postcard .postcard__title {
   font-size: 1.75rem;
+  color: #efe4d4;
 }
 .postcard .postcard__img {
   max-height: 180px;
@@ -2992,7 +3001,7 @@ a, a:hover {
   height: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  background-color: #424242;
+  background-color: #a9a454;
   transition: width 0.2s ease;
 }
 .postcard .postcard__text {
@@ -3006,6 +3015,7 @@ a, a:hover {
   text-overflow: ellipsis;
   text-align: justify;
   height: 100%;
+  color: #efe4d4;
 }
 .postcard .postcard__tagbox {
   display: flex;
@@ -3104,7 +3114,7 @@ a, a:hover {
   }
 
   .postcard.dark .postcard__text:before {
-    background: #18151f;
+    background: #a9a454;
   }
 
   .postcard.light .postcard__text:before {
@@ -3226,4 +3236,27 @@ a, a:hover {
   .yellow:nth-child(2n)::before {
     background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
   }
+}
+
+.btn-more,
+.btn-more:focus {
+  color: var(--color-inverse);
+  background: var(--color-primary);
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn-more:hover,
+.btn-more:focus:hover {
+  color: var(--color-inverse);
+  background: rgba(var(--color-primary-rgb), 0.85);
+}
+
+.btn-more {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 20px;
 }
