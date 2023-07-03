@@ -23,9 +23,11 @@ from django.urls import path, include
 
 from main import views
 
+
 urlpatterns = [
     path('', views.redirect_view),
     path('admin/', admin.site.urls),
     path('main/', include('main.urls')),
+    path('load/', views.load_more, name='load')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

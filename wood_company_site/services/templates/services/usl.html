@@ -8,7 +8,7 @@
 	<h2>Услуги</h2>
   </div><!-- End Section Title -->
 
-	<div class="container py-2">
+	<div class="container py-2" id="content">
 		{% for obj in data %}
 	<article class="postcard dark {% cycle 'blue' 'red' 'green' 'yellow' %}">
 		<a class="postcard__img_link" href="#">
@@ -33,7 +33,69 @@
 
 
 </div>
+
 	<div class="container section-title" data-aos="fade-up">
-        <a class="btn-more" href="">Показать больше</a>
+		<div class="spinner-border text-primary mt-2 not-visible" role="status" id="spinner">
+		</div>
+        <button type="button" class="btn-more" id="btn-load-more">Показать больше</button>
 	</div>
 </section><!-- End Services Section -->
+{{total_obj|json_script:"json-total"}}
+    <script>
+        // var _current_item = $('.postcard').length
+        // console.log(_current_item);
+        const loadBtn = document.getElementById('btn-load-more');
+		const spinner = document.getElementById('spinner');
+        const total = JSON.parse(document.getElementById('json-total').textContent);
+
+
+        function loadmorePost() {
+            var _current_item = $('.postcard').length;
+            const content_container = document.getElementById("content");
+            $.ajax({
+                url: '{% url "load" %}',
+                type: 'GET',
+                data: {
+                    'offset': _current_item
+                },
+                beforeSend: function () {
+                    loadBtn.classList.add('not-visible');
+                    spinner.classList.remove('not-visible');
+                },
+                success: function (response) {
+                    const data = response.data
+					spinner.classList.add('not-visible')
+                    data.map((obj) => {
+                        content_container.innerHTML += `<article class="postcard dark ${obj.color}">
+		<a class="postcard__img_link" href="#">
+			<img class="postcard__img" src="/media/${obj.image}" alt="Image Title" />
+
+		</a>
+		<div class="postcard__text t-dark">
+			<h1 class="postcard__title ${obj.color}"><a href="#">${ obj.name }</a></h1>
+
+			<div class="postcard__bar"></div>
+			<div class="postcard__preview-txt">${ obj.description }</div>
+			<ul class="postcard__tagbox">
+				<li class="tag__item"><i class="fas fa-tag mr-2"></i> от ${ obj.cost } р. за кв.м</li>
+				<li class="tag__item"><i class="fas fa-clock mr-2"></i> ${ obj.time } дней</li>
+
+			</ul>
+		</div>
+	</article>`
+                    })
+					if (_current_item == total) {
+                        alert.classList.add('not-visible');
+                    } else {
+                        loadBtn.classList.remove('not-visible');
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+            });
+        }
+        loadBtn.addEventListener('click', () => {
+            loadmorePost()
+        });
+    </script>

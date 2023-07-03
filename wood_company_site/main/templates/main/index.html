@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home - Append Bootstrap Temlate</title>
+  <title>ИП КОПЕЙКИН</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -16,6 +16,7 @@
   <link href="{% static 'main/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -65,7 +66,7 @@
           <li><a href="index.html#about">О нас</a></li>
           <li><a href="index.html#services">Услуги</a></li>
           <li><a href="index.html#portfolio">Портфолио</a></li>
-          <li><a href="index.html#team">Команда</a></li>
+<!--          <li><a href="index.html#team">Команда</a></li>-->
           <li><a href="index.html#contact">Контакты</a></li>
         </ul>
 
@@ -87,7 +88,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10">
-            <h2 data-aos="fade-up" data-aos-delay="100">Добро пожаловать в ООО "Пельмешки"</h2>
+            <h2 data-aos="fade-up" data-aos-delay="100">Добро пожаловать в ИП "Копейкин"</h2>
             <p data-aos="fade-up" data-aos-delay="200">Мы команда талантливых строителей занимающаяся строительством, отделкой и ремонтом деревянных домов, бань, беседок и т.п</p>
           </div>
           <div class="col-lg-5">
@@ -203,7 +204,7 @@
 <!--    </section>&lt;!&ndash; End Stats Section &ndash;&gt;-->
 
 
-    {% include 'services/usl.html' with data=data%}
+    {% include 'services/usl.html' %}
 
 
     <!-- Portfolio Section - Home Page -->
