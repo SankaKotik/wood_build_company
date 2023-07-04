@@ -7,3 +7,6 @@ class Service(models.Model):
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to='services/', null=True)
     time = models.IntegerField(null=True)
+
+    def __str__(self):
+        return str(self.name)

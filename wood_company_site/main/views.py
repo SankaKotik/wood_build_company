@@ -3,12 +3,15 @@ from django.shortcuts import render, redirect
 
 from services.models import Service
 
+from main.models import PortfolioCard
+
 
 # Create your views here.
 def index(request):
     cards = Service.objects.all()[:4]
     total_obj = Service.objects.count()
-    return render(request, 'main/index.html', {'data': cards, 'total_obj': total_obj})
+    portfolio_cards = PortfolioCard.objects.all()
+    return render(request, 'main/index.html', {'data': cards, 'total_obj': total_obj, 'portfolio': portfolio_cards})
 
 def load_more(request):
     offset = request.GET.get('offset')

@@ -10,7 +10,7 @@
 
 	<div class="container py-2" id="content">
 		{% for obj in data %}
-	<article class="postcard dark {% cycle 'blue' 'red' 'green' 'yellow' %}">
+	<article class="postcard dark {% cycle 'blue' 'red' 'green' 'yellow' %}" data-aos="fade-up" data-aos-delay="200">
 		<a class="postcard__img_link" href="#">
 			{% if obj.image %}
 			<img class="postcard__img" src="{{ obj.image.url}}" alt="Image Title" />
@@ -66,7 +66,7 @@
                     const data = response.data
 					spinner.classList.add('not-visible')
                     data.map((obj) => {
-                        content_container.innerHTML += `<article class="postcard dark ${obj.color}">
+                        content_container.innerHTML += `<article class="postcard dark ${obj.color}" data-aos="fade-up" data-aos-delay="200">
 		<a class="postcard__img_link" href="#">
 			<img class="postcard__img" src="/media/${obj.image}" alt="Image Title" />
 
